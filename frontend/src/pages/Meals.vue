@@ -1,8 +1,14 @@
 <template>
-    <v-container id="meal-home" fill-height fluid>
+    <v-container id="meal-home" fill-height>
         <v-row>
             <v-col>
-                <h1 class="text-center">MEALS</h1>
+                <v-sheet
+                    min-height="70vh"
+                    rounded="lg"
+                    class="d-flex justify-center align-center"
+                >
+                    <h1>DASHBOARD</h1>
+                </v-sheet>
             </v-col>
         </v-row>
     </v-container>

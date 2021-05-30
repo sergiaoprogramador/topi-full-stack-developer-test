@@ -4,6 +4,7 @@
             app
             color="primary" dark
             height="100%"
+            class="px-10"
         >
             <v-avatar
                 color="transparent"
@@ -25,9 +26,11 @@
             >
                 <v-tab
                     v-for="link in links"
-                    :key="link"
+                    :key="link.name"
+                    :href="link.url"
+                    target="_blank"
                 >
-                    {{ link }}
+                    {{ link.name }}
                 </v-tab>
             </v-tabs>
 
@@ -52,8 +55,16 @@ export default {
     name: "MealLayout",
     data: () => ({
         links: [
-            
+            {
+                url: "https://www.linkedin.com/in/sergiobarbosaramos/",
+                name: "My Linkedin"
+            },
+            {
+                url: "https://sergiaoprogramador.github.io",
+                name: "My Website"
+            },
         ]
+            
     })
 }
 </script>
