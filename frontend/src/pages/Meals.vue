@@ -7,7 +7,7 @@
                     rounded="lg"
                     class="d-flex justify-center align-center"
                 >
-                    <h1>DASHBOARD</h1>
+                    <CardMeals/>
                 </v-sheet>
             </v-col>
         </v-row>
@@ -15,11 +15,16 @@
 </template>
 
 <script>
+import CardMeals from './components/CardMeals';
+
 export default {
     name: "Meals",
     data: () => ({
 
     }),
+    components: {
+        CardMeals
+    },
     methods: {
         
     },
