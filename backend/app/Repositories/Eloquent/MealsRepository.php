@@ -57,4 +57,13 @@ class MealsRepository implements MealsRepositoryInterface
 
         return $allDataMeal->toArray();
     }
+
+    public function getAllMealsPaginate(): ?array
+    {
+        $pagedMeals = Meal::paginate(3);
+
+        if(!$pagedMeals) return null;
+
+        return $pagedMeals->toArray();
+    }
 }

@@ -79,4 +79,17 @@ class MealsController extends Controller
             //callback error
         }
     }
+
+    public function getAllDataMealsPagination(): object
+    {
+        try {
+            $allDataMealsPagination = $this->mealsRepositoryInterface->getAllMealsPaginate();
+
+            if(!$allDataMealsPagination) return $this->error("Not exists Meals", 404);
+
+            return $this->success("All Meals Paginate", $allDataMealsPagination, 200);
+        } catch (\Throwable $th) {
+            //callback error;
+        }
+    }
 }
