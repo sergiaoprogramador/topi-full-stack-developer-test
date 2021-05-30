@@ -10,4 +10,14 @@ class Meal extends Model
     use HasFactory;
 
     protected $table = 'meals';
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function area()
+    {
+        return $this->belongsTo(Area::class, 'area_id');
+    }
 }
