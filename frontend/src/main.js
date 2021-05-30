@@ -4,6 +4,9 @@ import "./registerServiceWorker";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
 
+import Axios from '@/http';
+Vue.use(Axios);
+
 Vue.config.productionTip = false;
 
 new Vue({
