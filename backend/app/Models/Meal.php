@@ -11,6 +11,11 @@ class Meal extends Model
 
     protected $table = 'meals';
 
+    protected $casts = [
+        'tags' => 'object',
+        'ingredients' => 'object',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');

@@ -66,4 +66,17 @@ class MealsController extends Controller
             //callback error
         }
     }
+
+    public function getAllDataMeal(int $meal_id): object
+    {
+        try {
+            $allDataMeal = $this->mealsRepositoryInterface->getAllDataByMeal($meal_id);
+
+            if(!$allDataMeal) return $this->error("Not exists All data for this Meal", 404);
+
+            return $this->success("All datas for Meal ", $allDataMeal, 200);
+        } catch (\Throwable $th) {
+            //callback error
+        }
+    }
 }

@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 Route::get('/meals', [MealsController::class, 'getAll']);
 Route::get('/meals/{meal_id}', [MealsController::class, 'getMeal']);
+Route::get('/meals/{meal_id}/allData', [MealsController::class, 'getAllDataMeal']);
 Route::get('/meals/{meal_id}/category', [MealsController::class, 'getCategoryMeal']);
 Route::get('/meals/{meal_id}/area', [MealsController::class, 'getAreaMeal']);

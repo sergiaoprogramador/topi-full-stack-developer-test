@@ -16,7 +16,7 @@ class MealsRepository implements MealsRepositoryInterface
         return $meals;
     }
 
-    public function getMealById(int $meal_id): object
+    public function getMealById(int $meal_id): ?object
     {
         $meal = Meal::find($meal_id);
 
@@ -25,7 +25,7 @@ class MealsRepository implements MealsRepositoryInterface
         return $meal;
     }
 
-    public function getCategoryByMeal(int $meal_id): array
+    public function getCategoryByMeal(int $meal_id): ?array
     {
         $meal = $this->getMealById($meal_id);
 
@@ -36,7 +36,7 @@ class MealsRepository implements MealsRepositoryInterface
         return $category->toArray();
     }
 
-    public function getAreaByMeal(int $meal_id): array
+    public function getAreaByMeal(int $meal_id): ?array
     {
         $meal = $this->getMealById($meal_id);
 
@@ -45,5 +45,16 @@ class MealsRepository implements MealsRepositoryInterface
         if(!$area) return null;
 
         return $area->toArray();
+    }
+
+    public function getAllDataByMeal(int $meal_id): ?array
+    {
+        $meal = $this->getMealById($meal_id);
+
+        $allDataMeal = $meal->with('category', 'area')->get();
+
+        if(!$allDataMeal) return null;
+
+        return $allDataMeal->toArray();
     }
 }

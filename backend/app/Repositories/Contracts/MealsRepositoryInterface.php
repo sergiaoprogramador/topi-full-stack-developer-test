@@ -11,4 +11,6 @@ interface MealsRepositoryInterface
     public function getCategoryByMeal(int $meal_id): array|null;
 
     public function getAreaByMeal(int $meal_id): array|null;
+
+    public function getAllDataByMeal(int $meal_id): array|null;
 }
