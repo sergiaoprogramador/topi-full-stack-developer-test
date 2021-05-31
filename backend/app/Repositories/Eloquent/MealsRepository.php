@@ -53,6 +53,8 @@ class MealsRepository implements MealsRepositoryInterface
 
         $allDataMeal = $meal->with('category', 'area')->get();
 
+        $allDataMeal = $allDataMeal->find($meal_id);
+
         if(!$allDataMeal) return null;
 
         return $allDataMeal->toArray();
