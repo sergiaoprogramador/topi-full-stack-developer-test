@@ -19,14 +19,23 @@ Dentro da tabela Meals, vi no Json que os dados de Igredientes, Medida e Tags po
 
 **Layout estrutural do projeto**
 
-Para estruturar o projeto melhor, costumo separar o que é de backend do que é de frontend. Logo, teremos duas pastas do projeto, uma para o Backend com todo gerenciamento de rotas, banco de dados, MVC, tratamento de erros, etc... E uma para o frontend, um SPA (single page application) construido com o framework Vue.js, com gerencimento de rotas (VueRouter), Axios, e template UI Vuetify.
+Para estruturar o projeto melhor, costumo separar o que é de backend do que é de frontend. Logo, teremos duas pastas do projeto, uma para o Backend com todo gerenciamento de rotas, banco de dados, MVC, tratamento de erros, etc... E uma para o frontend, um SPA (single page application) construido com o framework Vue.js, com gerencimento de rotas (VueRouter), Axios (Client HTTP), e template UI Vuetify.
 
 ![Arquitetura simples de Sofware](./arquitetura-simples.png)
 
 **Backend - PHP - Laravel**
 
 Para estruturar o backend, utilizei o PHP 8 e Laravel 8, que juntos fornecem uma estrutura completa aumentando significativamente a produtividade do desenvolvedor. Estruturei o projeto com as camadas que o Laravel fornece e ainda adicionei algumas camadas para boas práticas de organização de código. São elas, (Repositories, Interfaces, Traits). 
-Segue o layout de arquitetura do software:
 
 
 **Frontend - Javascript - Vue.js**
+
+E na estruturação do frontend, construimos um projeto com CLI do Vue e adicionamos o pacote VueRouter. Eu costumo dividir as responsabilidade dos arquivos, então teremos algumas pastas importantes como a http, pra gerenciar as configurações do axios e criar os objetos que conterão os services.js (Configurações de requisições). Assim também, os routes.js, e os index.js trazendo modularidade pro projeto, conforme sua necessidade de crescimento basta importarmos os novos files e trazer seus recursos para o projeto. 
+
+Segue as telas do projeto:
+
+#### Tela inicial com paginação dos pratos
+![Tela inicial - Meals](./tela-listagem-dos-meals.png)
+
+#### Tela do prato com informações de igredientes e instruções de preparo
+![Tela de Igredientes e instruções - Meals](./Tela-do-meal.png)
