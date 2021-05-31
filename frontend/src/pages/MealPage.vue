@@ -55,11 +55,13 @@
                                 <div class="headline">Ingredients</div>
 
                                 <v-list-item class="justify-start px-5 py-5">
-                                    <ul 
-                                        v-for="item in meal.ingredients"
-                                        :key="item.id"
-                                    >
-                                        <li>{{ item.name }}</li>
+                                    <ul>
+                                        <li
+                                            v-for="item in meal.ingredients"
+                                            :key="item.id"
+                                        >
+                                            {{ item.measure }} - {{ item.name }}
+                                        </li>
                                     </ul>
                                 </v-list-item>
                                 
@@ -97,7 +99,7 @@ export default {
             this.loading = true;
             let meal_id = this.$route.params.meal_id;
             const response = await this.findMeal(meal_id);
-            this.meal = response.data.results[0];
+            this.meal = response.data.results;
             this.loadMeals = false;
         }
     },
@@ -116,6 +118,8 @@ export default {
             try {
                 let response = services.http.request(meal.findAllDataByMeal)
                                     .then((result) => {
+                                        meal.findAllDataByMeal.url = "meals/{meal_id}/allData";
+                                        console.log(result)
                                         return result;
                                     }).catch((err) => {
                                         console.log(err)

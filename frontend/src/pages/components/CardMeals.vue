@@ -41,6 +41,7 @@
                                             color="primary"
                                             label
                                             text-color="white"
+                                            v-if="meals[0].tags !== null"
                                         >
                                             <v-icon left>
                                                 mdi-food-fork-drink
@@ -119,6 +120,7 @@
                                             color="primary"
                                             label
                                             text-color="white"
+                                            v-if="meals[1].tags !== null"
                                         >
                                             <v-icon left>
                                                 mdi-food-fork-drink
@@ -149,7 +151,7 @@
                         <v-btn
                             color="accent"
                             block
-                            @click="pageMeal()"
+                            @click="pageMeal(meals[1].id)"
                         >
                             See Meal
                         </v-btn>
@@ -197,6 +199,7 @@
                                             color="primary"
                                             label
                                             text-color="white"
+                                            v-if="meals[2].tags !== null"
                                         >
                                             <v-icon left>
                                                 mdi-food-fork-drink
@@ -227,7 +230,7 @@
                         <v-btn
                             color="accent"
                             block
-                            @click="pageMeal()"
+                            @click="pageMeal(meals[2].id)"
                         >
                             See Meal
                         </v-btn>
@@ -244,6 +247,7 @@
                 v-model="pagination.current"
                 :length="pagination.total"
                 :value="pagination.current"
+                @input="onPageChange(pagination.current)"
             >
 
             </v-pagination>
@@ -281,6 +285,7 @@ export default {
             try {
                 let response = services.http.request(meal.findAllMealsPaginated)
                                     .then((result) => {
+                                        meal.findAllMealsPaginated.url = "meals/allDataPaginated?page="
                                         return result;
                                     }).catch((err) => {
                                         console.log(err)
@@ -293,6 +298,14 @@ export default {
 
         pageMeal(meal_id) {
             this.$router.push({ name: 'meal-page', params: { meal_id: meal_id } });
+        },
+
+        async onPageChange(page) {
+            this.loadMeals = true;
+            const response = await this.findPaginationMeals(page);
+            console.log(response)
+            this.meals = response.data.results.data;
+            this.loadMeals = false;
         }
     },
 }
