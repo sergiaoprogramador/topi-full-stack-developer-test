@@ -13,11 +13,13 @@ Para este projeto o desafio é desenvolver um backend que estruture estes [JSON 
 
 ## Resolução do Desafio:
 
-** Banco de Dados MYSQL **
+**Banco de Dados MYSQL**
 Para resolver este desafio, primeiro analisei os dados contidos no Json fornecido e imaginei/desenhei quais tecnologias seriam usadas para estrutura-lo. Basicamente, criei 3 tabelas (Meals, Categories, Areas). 
 Dentro da tabela Meals, vi no Json que os dados de Igredientes, Medida e Tags poderiam ser bastante variados. Para resolver este problema, usei colunas Json, que possui bastante flexibilidade para tratar os dados, principalmente quando se trata de variabilidade. 
 
-** Backend PHP / Laravel **
+**Backend PHP / Laravel**
 
 Para estruturar o backend, utilizei o PHP 8 e Laravel 8, que juntos fornecem uma estrutura completa aumentando significativamente a produtividade do desenvolvedor. Estruturei o projeto com as camadas que o Laravel fornece e ainda adicionei algumas camadas para boas práticas de organização de código. São elas, (Repositories, Interfaces, Traits). 
 Segue o layout de arquitetura do software:
+
+![Arquitetura simples de Sofware](./arquitetura-simples.png)
