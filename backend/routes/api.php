@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/meals', [MealsController::class, 'getAll']);
-Route::get('/meals/allDataPaginate', [MealsController::class, 'getAllDataMealsPagination']);
+Route::get('/meals/allDataPaginated', [MealsController::class, 'getAllDataMealsPagination']);
 Route::get('/meals/{meal_id}', [MealsController::class, 'getMeal']);
 Route::get('/meals/{meal_id}/allData', [MealsController::class, 'getAllDataMeal']);
 Route::get('/meals/{meal_id}/category', [MealsController::class, 'getCategoryMeal']);

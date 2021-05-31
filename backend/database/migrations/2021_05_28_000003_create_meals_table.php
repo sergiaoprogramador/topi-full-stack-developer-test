@@ -19,7 +19,7 @@ class CreateMealsTable extends Migration
             $table->string('drink_alternate')->nullable();
             $table->text('instructions');
             $table->string('meal_thumb');
-            $table->json('tags');
+            $table->json('tags')->nullable();
             $table->string('youtube');
             $table->json('ingredients');
             $table->string('source');

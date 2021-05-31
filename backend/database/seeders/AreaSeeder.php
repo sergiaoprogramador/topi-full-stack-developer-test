@@ -16,7 +16,18 @@ class AreaSeeder extends Seeder
     {
         DB::table('areas')->insert(
             [
-                'name' => 'Turkish'
+                [
+                    'name' => 'Turkish'
+                ],
+                [
+                    'name' => 'Egyptian'
+                ],
+                [
+                    'name' => 'Canadian'
+                ],
+                [
+                    'name' => 'Italian'
+                ]
             ]
         );
     }
