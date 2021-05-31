@@ -28,7 +28,7 @@ Para estruturar o backend, utilizei o PHP 8 e Laravel 8, que juntos fornecem uma
 
 
 **Frontend - Javascript - Vue.js**
-E na estruturação do frontend, construimos um projeto com CLI do Vue e adicionamos o pacote VueRouter. Eu costumo dividir as responsabilidade dos arquivos, então teremos algumas pastas importantes como a http, pra gerenciar as configurações do axios e criar os objetos que conterão os services.js (Configurações de requisições). Assim também, os routes.js, e os index.js trazendo modularidade pro projeto, conforme sua necessidade de crescimento basta importarmos os novos files e trazer seus recursos para o projeto. 
+E na estruturação do frontend, construi um projeto com CLI do Vue e adicionamos o pacote VueRouter. Eu costumo dividir as responsabilidade dos arquivos, então teremos algumas pastas importantes como a http, pra gerenciar as configurações do axios e criar os objetos que conterão os services.js (Configurações de requisições). Assim também, os routes.js, e os index.js trazendo modularidade pro projeto, conforme sua necessidade de crescimento basta importarmos os novos files e trazer seus recursos para o projeto. 
 
 Lembrando que com as configurações estruturadas do Vue.js junto com o Vuetify que é baseado nas especificações do Material Design, podemos compilar o Projeto pra Mobile, PWA e Desktop. 
 
