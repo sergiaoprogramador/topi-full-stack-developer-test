@@ -42,7 +42,7 @@ Segue as telas do projeto:
 
 # Como testar o projeto
 
-## rodando o Backend
+## Rodando o Backend
 ### Configurando Docker e Laravel Sail
 
 Precisamos do Docker instalado na máquina [Get Started - Docker](https://www.docker.com/get-started)
@@ -70,7 +70,7 @@ sail artisan migrate:fresh --seed
 * Instale o insominia ou postman e teste as rotas que estão no arquivo api.php: backend/routes/api.php
 * Sua API Laravel estará na url: http://localhost/
 
-## rodando o Frontend
+## Rodando o Frontend
 
 ```
 cd frontend
