@@ -68,7 +68,7 @@ sail artisan migrate:fresh --seed
 ```
 
 * Instale o insominia ou postman e teste as rotas que estão no arquivo api.php: backend/routes/api.php
-* Sua API Laravel estará na url: http://localhost/
+* A API Laravel estará na url: http://localhost/
 
 ## Rodando o Frontend
 
@@ -84,4 +84,4 @@ yarn ou npm install
 yarn serve ou npm run serve
 ```
 
-* Sua API Laravel estará na url: http://localhost:8080/ ou verifique a saída no seu terminal bash. 
+* O Frontend Vue.js estará na url: http://localhost:8080/ ou verifique a saída no seu terminal bash. 
