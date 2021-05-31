@@ -21,6 +21,7 @@ Dentro da tabela Meals, vi no Json que os dados de Igredientes, Medida e Tags po
 
 Para estruturar o projeto melhor, costumo separar o que é de backend do que é de frontend. Logo, teremos duas pastas do projeto, uma para o Backend com todo gerenciamento de rotas, banco de dados, MVC, tratamento de erros, etc... E uma para o frontend, um SPA (single page application) construido com o framework Vue.js, com gerencimento de rotas (VueRouter), Axios (Client HTTP), e template UI Vuetify.
 
+#### Layout Arquitetural do projeto
 ![Arquitetura simples de Sofware](./arquitetura-simples.png)
 
 **Backend - PHP - Laravel**
@@ -32,6 +33,8 @@ Para estruturar o backend, utilizei o PHP 8 e Laravel 8, que juntos fornecem uma
 
 E na estruturação do frontend, construimos um projeto com CLI do Vue e adicionamos o pacote VueRouter. Eu costumo dividir as responsabilidade dos arquivos, então teremos algumas pastas importantes como a http, pra gerenciar as configurações do axios e criar os objetos que conterão os services.js (Configurações de requisições). Assim também, os routes.js, e os index.js trazendo modularidade pro projeto, conforme sua necessidade de crescimento basta importarmos os novos files e trazer seus recursos para o projeto. 
 
+Lembrando que com as configurações estruturadas do Vue.js junto com o Vuetify que é baseado nas especificações do Material Design, podemos compilar o Projeto pra Mobile, PWA e Desktop. 
+
 Segue as telas do projeto:
 
 #### Tela inicial com paginação dos pratos
@@ -39,3 +42,49 @@ Segue as telas do projeto:
 
 #### Tela do prato com informações de igredientes e instruções de preparo
 ![Tela de Igredientes e instruções - Meals](./Tela-do-meal.png)
+
+# Como testar o projeto
+
+## rodando o Backend
+### Configurando Docker e Laravel Sail
+
+Precisamos do Docker instalado na máquina [Get Started - Docker](https://www.docker.com/get-started)
+Após, siga as instruções (commands) no bash:
+
+```
+cd backend
+```
+
+```
+alias sail='bash vendor/bin/sail'
+```
+
+* desative nginx, mysql ou qualquer configuração que possa causar conflito com as images do docker: Exemplo: ``` sudo service nginx stop ```
+
+```
+sail up -d
+```
+### Configure o banco de dados - Laravel migrations e seeds
+
+```
+sail artisan migrate:fresh --seed
+```
+
+* Instale o insominia ou postman e teste as rotas que estão no arquivo api.php: backend/routes/api.php
+* Sua API Laravel estará na url: http://localhost/
+
+## rodando o Frontend
+
+```
+cd frontend
+```
+
+```
+yarn ou npm install
+```
+
+```
+yarn serve ou npm run serve
+```
+
+* Sua API Laravel estará na url: http://localhost:8080/ ou verifique a saída no seu terminal bash. 
