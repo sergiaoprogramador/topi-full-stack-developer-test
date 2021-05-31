@@ -1,6 +1,6 @@
 # Full Stack Developer Test
 
-Para este projeto o desafio é desenvolver um backend que estruture estes (JSON de dados)[https://www.themealdb.com/api/json/v1/1/search.php?s=], forneça os dados via API, e construir um frontend que consuma esses dados, mostrando-os. 
+Para este projeto o desafio é desenvolver um backend que estruture estes [JSON de dados](https://www.themealdb.com/api/json/v1/1/search.php?s=), forneça os dados via API, e construir um frontend que consuma esses dados, mostrando-os. 
 
 ### Os requisitos são:
 * You NEED to develop both the front-end and the back-end.
